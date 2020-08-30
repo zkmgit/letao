@@ -2,7 +2,7 @@
   <div class="new-containt">
     <div class="menu">
       <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-        <div class="item" v-for="item in newslist" :key="item.id">
+        <div class="item"  v-for="item in newslist"  :key="item.id" @click="getNewById(item.id)">
           <div class="left">
             <img v-lazy="item.img_url" />
           </div>
@@ -55,6 +55,9 @@ export default {
       }
       this.newslist = this.newslist.concat(message);
     },
+    getNewInfoById(id){
+
+    },
     onRefresh() {
       //下拉刷新获取首页的数据
       setTimeout(() => {
@@ -73,6 +76,9 @@ export default {
       this.isMore = true;
       this.getnewslist();
     },
+    getNewById(id){
+        this.$router.push(`/newdetails/${id}`);
+    }
   },
   created() {
     this.$parent.ShowNavBar({ title: "新闻列表" });

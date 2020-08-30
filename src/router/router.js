@@ -7,6 +7,8 @@ import home from '@/components/tabbar/home.vue';
 import mycar from '@/components/tabbar/mycar.vue';
 import user from '@/components/tabbar/user.vue';
 import news from '@/components/news/news.vue';
+import shows from '@/components/shops/shop.vue';
+import newDetails from '@/components/news/newDetails.vue';
 
 const router = new Router({
     routes:[
@@ -15,6 +17,8 @@ const router = new Router({
         {path:"/mycar",component:mycar},
         {path:"/user",component:user},
         {path:"/newslist",component:news},
+        {path:"/showlist",component:shows},
+        {path:"/newdetails/:id",component:newDetails},
     ]
 })
 

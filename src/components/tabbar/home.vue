@@ -6,7 +6,7 @@
       </van-swipe-item>
     </van-swipe>
     <van-grid :column-num="4">
-      <van-grid-item>
+      <van-grid-item to="/showlist">
         <img src="../../assets/images/menu10.png" alt />
         <div>数码电器</div>
       </van-grid-item>
@@ -115,13 +115,13 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 10px;
     .item {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       width: 47%;
-      margin: 10px 0;
+      margin: 5px 0;
       background-color: #fff;
       border-radius: 5px;
       overflow: hidden;
