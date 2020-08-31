@@ -41,7 +41,7 @@
     </van-grid>
     <van-divider :style="{ color: '#333', borderColor: '#333', padding: '0 16px' }">为你推荐</van-divider>
     <div class="goodList">
-      <div class="item" v-for="item in recommend" :key="item.id">
+      <router-link :to="'/shopdetail/' + item.id" class="item" v-for="item in recommend" :key="item.id">
         <img v-lazy="item.img_url" />
         <div class="text">
           <div class="title">{{ item.title }}</div>
@@ -50,7 +50,7 @@
             <span class="buy">{{ item.buy }}人已购买</span>
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>

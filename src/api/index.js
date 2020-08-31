@@ -28,3 +28,11 @@ export async function getComments(id,page){
 export async function postComment(id,content){
     return await instance.post(`/postcomment/${id}`,content);
 }
+//getthumbimages/
+export async function getThumBimages(id){
+    return await instance.get(`/getthumbimages/${id}`);
+}
+//getgoodsinfo
+export async function getGoodsInfo(id){
+    return await instance.get(`/getgoodsinfo/${id}`);
+}

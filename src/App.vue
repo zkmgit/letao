@@ -14,7 +14,7 @@
       </div>
     </van-sticky>
     <router-view></router-view>
-    <div class="footer">
+    <div class="footer" v-show="isShowFooter">
       <van-tabbar v-model="active" :route="true">
         <van-tabbar-item to="/home" icon="home-o">首页</van-tabbar-item>
         <van-tabbar-item to="/mycar" icon="cart-o">我的购物车</van-tabbar-item>
@@ -34,6 +34,7 @@ export default {
       isHeaderShow: true,
       isNabShow: false,
       title: "",
+      isShowFooter:true
     };
   },
   methods: {
@@ -41,10 +42,14 @@ export default {
       this.title = options.title;
       this.isHeaderShow = false;
       this.isNabShow = true;
+      if(options.flag){
+          this.isShowFooter = false;
+      }
     },
     ShowHeader() {
       this.isHeaderShow = true;
       this.isNabShow = false;
+      this.isShowFooter = true;
     },
   },
   created() {

@@ -9,6 +9,7 @@ import user from '@/components/tabbar/user.vue';
 import news from '@/components/news/news.vue';
 import shows from '@/components/shops/shop.vue';
 import newDetails from '@/components/news/newDetails.vue';
+import shopDetail from '@/components/shops/shopDetail.vue';
 
 const router = new Router({
     routes:[
@@ -19,6 +20,7 @@ const router = new Router({
         {path:"/newslist",component:news},
         {path:"/showlist",component:shows},
         {path:"/newdetails/:id",component:newDetails},
+        {path:"/shopdetail/:id",component:shopDetail,props:true},
     ]
 })
 
