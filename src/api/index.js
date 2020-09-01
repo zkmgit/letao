@@ -36,3 +36,17 @@ export async function getThumBimages(id){
 export async function getGoodsInfo(id){
     return await instance.get(`/getgoodsinfo/${id}`);
 }
+//获取图片分享的分类数据
+export async function getCateGory(){
+    return await instance.get(`/getcategory`);
+}
+
+// 获取图片分享的id指定分类列表数据
+export async function getCateList(id){
+    return await instance.get(`/getcatelist/${id}`);
+}
+
+// 获取图片详情中的缩略图
+export async function getThumbs(id){
+    return await instance.get(`/getthumbimages/${id}`);
+}

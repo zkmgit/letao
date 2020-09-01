@@ -30,7 +30,7 @@
         <img src="../../assets/images/menu17.png" alt />
         <div>全部</div>
       </van-grid-item>
-      <van-grid-item>
+      <van-grid-item to="/photo">
         <img src="../../assets/images/menu18.png" alt />
         <div>美图欣赏</div>
       </van-grid-item>

@@ -10,6 +10,7 @@ import news from '@/components/news/news.vue';
 import shows from '@/components/shops/shop.vue';
 import newDetails from '@/components/news/newDetails.vue';
 import shopDetail from '@/components/shops/shopDetail.vue';
+import photo from '@/components/photo/photo.vue';
 
 const router = new Router({
     routes:[
@@ -21,6 +22,7 @@ const router = new Router({
         {path:"/showlist",component:shows},
         {path:"/newdetails/:id",component:newDetails},
         {path:"/shopdetail/:id",component:shopDetail,props:true},
+        {path:"/photo",component:photo},
     ]
 })
 
