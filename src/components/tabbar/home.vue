@@ -84,7 +84,7 @@ export default {
     },
   },
   created() {
-    this.$parent.ShowHeader();
+      this.$parent.ShowFooter();
     this.getLunBo();
     this.getrecommend();
   },

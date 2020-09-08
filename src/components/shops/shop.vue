@@ -51,7 +51,9 @@ export default {
     }
   },
   created() {
-    this.$parent.ShowNavBar({ title: "商品列表" });
+    // this.$parent.ShowNavBar({ title: "商品列表" });
+    this.$parent.title =  "商品列表";
+    this.$parent.ShowFooter();
     this.getgoods();
   },
 };
@@ -109,6 +111,9 @@ export default {
         }
       }
     }
+  }
+  .van-button {
+      margin-bottom: 50px;
   }
 }
 </style>

@@ -1,14 +1,16 @@
 <template>
   <div class="app-container">
+      <van-sticky>
     <van-nav-bar
-      v-show="isNabShow"
+      id="nabber"
       :title="title"
       left-text="返回"
       left-arrow
       @click-left="$router.go(-1)"
     />
+    </van-sticky>
     <van-sticky>
-      <div class="header" v-show="isHeaderShow">
+      <div class="header" id="header">
         <img src="@/assets/images/logo.png" alt />
         <van-search placeholder="请输入搜索关键词" />
       </div>
@@ -25,35 +27,30 @@
 </template>
 
 <script>
+//按需引入vant组件
 import { Search, Tabbar, TabbarItem, Sticky, NavBar } from "vant";
 
 export default {
   data() {
     return {
       active: 0,
-      isHeaderShow: true,
-      isNabShow: false,
+      //导航头的标题
       title: "",
       isShowFooter:true
     };
   },
   methods: {
-    ShowNavBar(options) {
-      this.title = options.title;
-      this.isHeaderShow = false;
-      this.isNabShow = true;
-      if(options.flag){
-          this.isShowFooter = false;
-      }
+      //显示和隐藏底部
+    ShowFooter(){
+        this.isShowFooter = true;
     },
-    ShowHeader() {
-      this.isHeaderShow = true;
-      this.isNabShow = false;
-      this.isShowFooter = true;
+    hideFooter(){
+        this.isShowFooter = false;
     },
+
   },
   created() {
-    this.ShowHeader();
+    this.ShowFooter();
     this.$nextTick(function () {
       //会挂载到DOM才执行
     });
@@ -74,6 +71,9 @@ export default {
   max-width: 750px;
   margin: 0 auto;
   padding-bottom: 50px;
+  background-color: #F1F1F1;
+  height: 100vh;
+
   .header {
     display: flex;
     justify-content: space-between;

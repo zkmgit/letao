@@ -81,7 +81,8 @@ export default {
     }
   },
   created() {
-    this.$parent.ShowNavBar({ title: "新闻列表" });
+    // this.$parent.ShowNavBar({ title: "新闻列表" });
+    this.$parent.title = "新闻列表";
     this.getnewslist();
   },
   components: {
@@ -129,6 +130,9 @@ export default {
           color: #888;
         }
       }
+    }
+    .van-button {
+        margin-bottom: 50px;
     }
   }
 }

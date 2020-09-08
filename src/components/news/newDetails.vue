@@ -100,7 +100,8 @@ export default {
   },
   created() {
       //进行初始化
-    this.$parent.ShowNavBar({ title: "新闻详情" });
+    // this.$parent.ShowNavBar({ title: "新闻详情" });
+    this.$parent.title = "新闻详情";
     this.getnew();
     this.getcomments();
   },
@@ -111,7 +112,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .newdetails {
   padding: 0 10px;
   background-color: #faf9f9;
@@ -143,7 +144,7 @@ export default {
           margin: 10px 0;
       }
   }
-    .content {
+    /deep/ .content {
         img {
             width: 100%;
         }

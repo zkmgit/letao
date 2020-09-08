@@ -50,3 +50,25 @@ export async function getCateList(id){
 export async function getThumbs(id){
     return await instance.get(`/getthumbimages/${id}`);
 }
+
+// 获取购物车商品的信息
+export  async  function getCarData(ids){
+    return  await instance.get(`/getshopcarlist/${ids}`);
+}
+
+
+// 用户登录
+export async function  userLogin (data) {
+    return await instance.post(`/login`,data)
+}
+
+//
+export async function  isLogin () {
+    var token = localStorage.getItem('token');
+    try{
+        await instance.post(`/checktoken?token=${token}`);
+    }catch(e){
+
+    }
+
+}
