@@ -36,7 +36,12 @@
       </div>
       <van-goods-action>
         <van-goods-action-icon icon="chat-o" text="客服" color="#07c160" />
-        <van-goods-action-icon icon="cart-o" to="/mycar" text="购物车" :badge="this.$store.getters.getCount" />
+        <van-goods-action-icon
+          icon="cart-o"
+          to="/mycar"
+          text="购物车"
+          :badge="this.$store.getters.getCount"
+        />
         <van-goods-action-button @click="addCar" type="warning" text="加入购物车" />
         <van-goods-action-button type="danger" text="立即购买" />
       </van-goods-action>
@@ -67,35 +72,16 @@ export default {
     };
   },
   methods: {
-      addCar(){
-          var goods = {
-              id:this.id,
-              number:this.stepper,
-              flag:true,
-              price:this.goodInfo.sell_price
-          }
-          this.$store.commit('addCar',goods);
-      },
-    // addCar() {
-    //   //统计加入购物车的数量
-    //   this.count = this.count + this.stepper;
-    //   //加入本地存储
-    //   var item = {
-    //     id: this.id,
-    //     number: this.stepper,
-    //     flag: false,
-    //   };
-    //   // 加入到购物车之前判断是否有相同商品
-    //   var index = this.carInfo.findIndex((obj) => obj.id == this.id);
-    //   if (index !== -1) {
-    //     // 找到，数量累加
-    //     this.carInfo[index].number += this.stepper;
-    //   } else {
-    //     // 没有找到相同商品
-    //     this.carInfo.push(item);
-    //   }
-    //   localStorage.setItem("carData", JSON.stringify(this.carInfo));
-    // },
+    addCar() {
+      var goods = {
+        id: this.id,
+        number: this.stepper,
+        flag: true,
+        price: this.goodInfo.sell_price,
+      };
+      this.$store.commit("addCar", goods);
+    },
+
     async getGoodInfo() {
       //获取商品的详细信息
       var { message } = await getGoodsInfo(this.id);
@@ -185,7 +171,6 @@ export default {
       }
     }
     .introduce {
-    //   overflow: hidden;
       background-color: #fff;
       .title {
         margin: 16px 0px;
@@ -196,6 +181,16 @@ export default {
       /deep/ .content {
         img {
           width: 100%;
+        }
+        /deep/ table {
+          width: 100%;
+          tr {
+            td {
+              /deep/ img {
+                width: 100%;
+              }
+            }
+          }
         }
       }
     }

@@ -11,9 +11,12 @@ import shows from '@/components/shops/shop.vue';
 import newDetails from '@/components/news/newDetails.vue';
 import shopDetail from '@/components/shops/shopDetail.vue';
 import photo from '@/components/photo/photo.vue';
-import addr from '@/components/addr/addr.vue';
+import addradd from '@/components/addr/addradd.vue';
+import addredit from '@/components/addr/addredit.vue';
 import login from '@/components/user/login.vue';
 import register from '@/components/user/register.vue';
+import addrmanager from '@/components/addr/addrmanager.vue';
+import order from '@/components/order/order.vue';
 
 const router = new Router({
     routes:[
@@ -26,9 +29,12 @@ const router = new Router({
         {path:"/newdetails/:id",component:newDetails},
         {path:"/shopdetail/:id",component:shopDetail,props:true},
         {path:"/photo",component:photo},
-        {path:"/addr",component:addr},
+        {path:"/addradd",component:addradd},
+        {path:"/addredit/:userInfo",component:addredit},
         {path:"/login",component:login},
         {path:"/register",component:register},
+        {path:"/addrmanager",component:addrmanager},
+        {path:"/order",component:order},
     ]
 })
 //全局前置导航

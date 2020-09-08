@@ -70,5 +70,19 @@ export async function  isLogin () {
     }catch(e){
 
     }
+}
+// 获取用户的地址
+export async function  userAddressData (userid) {
+    return await instance.get(`/getaddress/${userid}?v=${Math.random()}`)
+    // return await instance.get(`/getaddress/${userid}`)
+}
 
+// 添加用户收货地址
+export async function  addUserAddressData (userid,addressInfo) {
+    return await instance.post(`/addaddress/${userid}`,addressInfo)
+}
+
+// 删除用户收货地址
+export async function  deleteUserAddressData (addessid) {
+    return await instance.post(`/deladdress/${addessid}`)
 }

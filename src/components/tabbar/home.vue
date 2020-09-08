@@ -34,14 +34,19 @@
         <img src="../../assets/images/menu18.png" alt />
         <div>美图欣赏</div>
       </van-grid-item>
-      <van-grid-item to="/newslist" >
+      <van-grid-item to="/newslist">
         <img src="../../assets/images/menu19.png" alt />
         <div>乐淘头条</div>
       </van-grid-item>
     </van-grid>
     <van-divider :style="{ color: '#333', borderColor: '#333', padding: '0 16px' }">为你推荐</van-divider>
     <div class="goodList">
-      <router-link :to="'/shopdetail/' + item.id" class="item" v-for="item in recommend" :key="item.id">
+      <router-link
+        :to="'/shopdetail/' + item.id"
+        class="item"
+        v-for="item in recommend"
+        :key="item.id"
+      >
         <img v-lazy="item.img_url" />
         <div class="text">
           <div class="title">{{ item.title }}</div>
@@ -84,7 +89,7 @@ export default {
     },
   },
   created() {
-      this.$parent.ShowFooter();
+    this.$parent.ShowFooter();
     this.getLunBo();
     this.getrecommend();
   },
