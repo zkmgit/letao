@@ -10,7 +10,7 @@
     </div>
     <div class="menu">
       <van-cell title="修改密码" is-link to="index" />
-      <van-cell title="我的订单" is-link to="index" />
+      <van-cell title="我的订单" is-link to="/order" />
       <van-cell title="地址管理" to="/addrmanager" is-link />
     </div>
     <div class="back">

@@ -82,7 +82,23 @@ export async function  addUserAddressData (userid,addressInfo) {
     return await instance.post(`/addaddress/${userid}`,addressInfo)
 }
 
+// 编辑用户收货地址
+export async function  editUserAddressData (userid,addressInfo) {
+    return await instance.post(`/updateaddress/${userid}`,addressInfo)
+}
+
 // 删除用户收货地址
 export async function  deleteUserAddressData (addessid) {
     return await instance.post(`/deladdress/${addessid}`)
+}
+
+// 提交订单接口
+export async function  commitOrder (orderData) {
+    return await instance.post(`/commitorder`,orderData)
+}
+
+
+// 获取用户的订单数据
+export async function  userOrder (user_id) {
+    return await instance.post(`/userorder/${user_id}`)
 }

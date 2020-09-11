@@ -28,7 +28,7 @@
 
 <script>
 //按需引入vant组件
-import { Search, Tabbar, TabbarItem, Sticky, NavBar } from "vant";
+import { Search, Tabbar, TabbarItem, Sticky, NavBar,Toast } from "vant";
 
 export default {
   data() {
@@ -38,6 +38,22 @@ export default {
       title: "",
       isShowFooter:true
     };
+  },
+  computed:{
+      isPending:function(){
+          return this.$store.state.isPending;
+      }
+  },
+  watch:{
+      "isPending":function(isPending){
+          isPending
+          ? Toast.loading({
+               message: 'loading...',
+                forbidClick: true,
+                duration: 0, // 持续展示 toast
+          })
+          : Toast.clear();
+      }
   },
   methods: {
       //显示和隐藏底部
